@@ -63,43 +63,42 @@ This is basically a summary of helm chart migrations which already took place:
 
 1. Clone the original repository
 
-  ```shell
-  git clone <SOURCE_REPO_URL> temp-repo
-  ```
+   ```shell
+   git clone <SOURCE_REPO_URL> temp-repo
+   ```
 
 1. Filter the history
-  The command below filters the history and also renames the directory so that
-  the chart is afterwards in a directory called `charts/`
+   The command below filters the history and also renames the directory so that the chart is afterwards in a directory called `charts/`
 
-  ```shell
-  cd temp-repo
-  git filter-repo --path-glob '<CHART-DIRECTORY>/*' --path-rename
-  <CHART-PARENT-DIRECTORY>/:charts/
-  ```
+   ```shell
+   cd temp-repo
+   git filter-repo --path-glob '<CHART-DIRECTORY>/*' --path-rename
+   <CHART-PARENT-DIRECTORY>/:charts/
+   ```
 
-  This was used to filter grafana chart's history from stable repository
+   This was used to filter grafana chart's history from stable repository
   
-  ```shell
-  git filter-repo --path-glob 'stable/grafana/*' --path-rename stable/:charts/
-  ```
+   ```shell
+   git filter-repo --path-glob 'stable/grafana/*' --path-rename stable/:charts/
+   ```
 
 1. Push the repository to it's new location 
   
-  ```shell
-  git checkout -b main
-  git remote add origin <NEW_REPO_URL>
-  git push origin main
-  ```
+   ```shell
+   git checkout -b main
+   git remote add origin <NEW_REPO_URL>
+   git push origin main
+   ```
 
 1. Create an empty GitHub Pages branch
    This branch will be used to publish the `index.yaml` which is the index of the chart repository.
 
-  ```shell
-  git checkout --orphan gh-pages
-  git rm -rf .
-  git commit --allow-empty -m "root commit"
-  git push origin gh-pages
-  ```
+   ```shell
+   git checkout --orphan gh-pages
+   git rm -rf .
+   git commit --allow-empty -m "root commit"
+   git push origin gh-pages
+   ```
 
 1. Configure branch protection rules
    We have two important branches in our repository `main` and `gh-pages`.
@@ -124,22 +123,22 @@ This is basically a summary of helm chart migrations which already took place:
      PR approvals are not useful here as the release pipeline want's to push here directly.
 
 1. Copy template files to the new repository
-  You should copy the following files to your new repository.
-  Don't worry about the content for now we will get to that in a moment.
+   You should copy the following files to your new repository.
+   Don't worry about the content for now we will get to that in a moment.
 
-  ```text
-  LICENSE
-  ct.yaml
-  CODE_OF_CONDUCT.md
-  .github/CODEOWNERS
-  .github/workflows/lint-test.yaml
-  .github/workflows/linter.yml
-  .github/workflows/release.yaml
-  .github/workflows/sync-readme.yaml
-  CHART-README.md
-  CONTRIBUTING.md
-  REPO-README.md
-  ```
+   ```text
+   LICENSE
+   ct.yaml
+   CODE_OF_CONDUCT.md
+   .github/CODEOWNERS
+   .github/workflows/lint-test.yaml
+   .github/workflows/linter.yml
+   .github/workflows/release.yaml
+   .github/workflows/sync-readme.yaml
+   CHART-README.md
+   CONTRIBUTING.md
+   REPO-README.md
+   ```
 
 1. Decide which License to use
    The template contains Apache 2.0 License.
