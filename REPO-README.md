@@ -19,8 +19,10 @@ You can then run `helm search repo {{ .GitHubOrg }}` to see the charts.
 
 ## Contributing
 
-We'd love to have you contribute! Please refer to our [contribution guidelines](CONTRIBUTING.md) for details.
+<!-- Keep full URL links to repo files because this README syncs from main to gh-pages.  -->
+We'd love to have you contribute! Please refer to our [contribution guidelines](https://github.com/{{ .GitHubOrg }}/helm-charts/blob/main/CONTRIBUTING.md) for details.
 
 ## License
 
-[Apache 2.0 License](./LICENSE).
+<!-- Keep full URL links to repo files because this README syncs from main to gh-pages.  -->
+[Apache 2.0 License](https://github.com/{{ .GitHubOrg }}/helm-charts/blob/main/LICENSE).
