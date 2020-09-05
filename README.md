@@ -198,8 +198,8 @@ This is basically a summary of helm chart migrations which already took place:
    which should be required to pass before a pull request can be merged.
    If everything it ok, you can go ahead and merge your PR.
 
-  Congratulations!
-  The first version of the chart should be released in your new repository!
+   Congratulations!
+   The first version of the chart should be released in your new repository!
 
 1. Test the new repository
    Follow your updated installation instructions of you chart and check if everything is working.
