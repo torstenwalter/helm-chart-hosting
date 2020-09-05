@@ -91,6 +91,7 @@ This is basically a summary of helm chart migrations which already took place:
    ```
 
 1. Create an empty GitHub Pages branch
+
    This branch will be used to publish the `index.yaml` which is the index of the chart repository.
 
    ```shell
@@ -101,6 +102,7 @@ This is basically a summary of helm chart migrations which already took place:
    ```
 
 1. Configure branch protection rules
+
    We have two important branches in our repository `main` and `gh-pages`.
    It's worth to protect both from accidental force pushes etc.
    These settings have proven useful:
@@ -123,6 +125,7 @@ This is basically a summary of helm chart migrations which already took place:
      PR approvals are not useful here as the release pipeline want's to push here directly.
 
 1. Copy template files to the new repository
+
    You should copy the following files to your new repository.
    Don't worry about the content for now we will get to that in a moment.
 
@@ -141,23 +144,28 @@ This is basically a summary of helm chart migrations which already took place:
    ```
 
 1. Decide which License to use
+
    The template contains Apache 2.0 License.
    If you want something different then replace that file.
 
 1. Update Contributing Guidelines
+
    CONTRIBUTING.md is a standard contribution template.
    That should serve as a starting point.
    If you want to enforce DCO check then [DCO](https://github.com/apps/dco) GitHub App could be used for that.
    If you don't want DCO then also remove it from contributing guidelines. 
 
 1. Code of Conduct
+
    The template points to the CNCF Code of Conduct.
 
 1. Repository README
+
    You can rename `REPO-README.md` to `README.md`.
    The file contains some placeholders, which need to be replaced.
 
 1. GitHub Workflows
+
    These are the files in `.github/workflows/`.
    In case you chart depends on other charts you need to add this to `release.yaml`workflow directly after installation of helm
 
@@ -169,6 +177,7 @@ This is basically a summary of helm chart migrations which already took place:
    ```
 
 1. Run linter on all files
+
    The workflow for super linter just checks modified files.
    To provide a good contributor experience you should check all files for
    errors now and fix them.
@@ -182,15 +191,18 @@ This is basically a summary of helm chart migrations which already took place:
    Note: VALIDATE_YAML is also disabled in the workflow as helm templates are golang templates and not valid yaml files.
 
 1. Chart README
+
    `CHART-README.md`, which was copied from <https://gist.github.com/scottrigby/8117c4a4a10a33e597ca98f6aca95e8a> is a great template for a Helm Chart README.
    You can use that structure to adapt the existing README if you like.
    In any case you should update the installation instructions as at least the chart repository was changed.
 
 1. Release first version of the Chart
+
    Together with the README changes you should increase the Chart version in `Chart.yaml`.
    I suggest to increase at the minor version.
 
 1. Commit all changes and create a pull request for it
+
    Now you are ready to go to create your first pull request for your new repository.
    You should see the Github checks running (and hopefully passing).
    That's a good time to revisit you branch protection settings and activate the status checks,
@@ -201,9 +213,11 @@ This is basically a summary of helm chart migrations which already took place:
    The first version of the chart should be released in your new repository!
 
 1. Test the new repository
+
    Follow your updated installation instructions of you chart and check if everything is working.
 
 1. Deprecate the old chart
+
    Now that everything is migrated you should go ahead and deprecate your old chart.
    For this you need to
    - prefix the description with "DEPRECATED - ",
