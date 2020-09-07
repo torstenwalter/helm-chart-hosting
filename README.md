@@ -164,6 +164,12 @@ This is basically a summary of helm chart migrations which already took place:
    You can rename `REPO-README.md` to `README.md`.
    The file contains some placeholders, which need to be replaced.
 
+1. GitHub issue and pull request templates
+
+   - [bug report](./ISSUE_TEMPLATE/bug_report.md)
+   - [feature request](./ISSUE_TEMPLATE/feature_request.md)
+   - [pull request](./PULL_REQUEST_TEMPLATE.md)
+
 1. GitHub Workflows
 
    These are the files in `.github/workflows/`.
