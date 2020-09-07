@@ -1,7 +1,7 @@
 ---
 name: Bug report
 about: Create a report to help us improve
-title: '[name of the chart e.g. prometheus-kube-stack] issue title'
+title: 'issue title'
 labels: 'bug'
 assignees: ''
 
@@ -27,7 +27,7 @@ A clear and concise description of what the bug is.
 
 Helm Version:
 
-```
+```console
 $ helm version
 please put the output of it here
 ```
@@ -40,8 +40,6 @@ please put the output of it here
 ```
 
 
-
-**Which chart**:
 **Which version of the chart**:
 
 
