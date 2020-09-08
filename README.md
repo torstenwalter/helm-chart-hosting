@@ -2,7 +2,6 @@
 
 This repository contains templates which can be used to host your own [Helm](https://helm.sh/) chart repository on GitHub.
 
-
 Hosting your own charts on GitHub has become very easy as there are many GitHub Actions which can be used to set everything up.
 
 This repository contains ready to use Github Workflows to
@@ -41,7 +40,7 @@ This is basically a summary of helm chart migrations which already took place:
 1. `stable/jenkins` to <https://github.com/jenkinsci/helm-charts>
 1. `stable/grafana` to <https://github.com/grafana/helm-charts>
    That migration was done in about a day.
-   https://github.com/grafana/helm-charts/issues/3 was used to document the executed steps.
+   <https://github.com/grafana/helm-charts/issues/3> was used to document the executed steps.
    That's helped to write this.
 
 ### Prerequisites
@@ -57,6 +56,7 @@ This is basically a summary of helm chart migrations which already took place:
   ```shell
   brew install git-filter-repo
   ```
+
 - an empty repository in GitHub where the chart should be migrated to
 
 ### Migration Steps
@@ -82,7 +82,7 @@ This is basically a summary of helm chart migrations which already took place:
    git filter-repo --path-glob 'stable/grafana/*' --path-rename stable/:charts/
    ```
 
-1. Push the repository to it's new location 
+1. Push the repository to it's new location
   
    ```shell
    git checkout -b main
@@ -153,7 +153,7 @@ This is basically a summary of helm chart migrations which already took place:
    CONTRIBUTING.md is a standard contribution template.
    That should serve as a starting point.
    If you want to enforce DCO check then [DCO](https://github.com/apps/dco) GitHub App could be used for that.
-   If you don't want DCO then also remove it from contributing guidelines. 
+   If you don't want DCO then also remove it from contributing guidelines.
 
 1. Code of Conduct
 
@@ -163,6 +163,12 @@ This is basically a summary of helm chart migrations which already took place:
 
    You can rename `REPO-README.md` to `README.md`.
    The file contains some placeholders, which need to be replaced.
+
+1. GitHub issue and pull request templates
+
+   - [bug report](./ISSUE_TEMPLATE/bug_report.md)
+   - [feature request](./ISSUE_TEMPLATE/feature_request.md)
+   - [pull request](./PULL_REQUEST_TEMPLATE.md)
 
 1. GitHub Workflows
 
